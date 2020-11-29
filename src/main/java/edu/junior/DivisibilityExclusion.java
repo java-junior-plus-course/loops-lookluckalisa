@@ -55,7 +55,7 @@ public class DivisibilityExclusion {
         // TODO: Remove all even numbers from the array with for-each loop
         int a = 0;
 
-        for (int i = 0; i < numbers.length; i++) {
+        for (int i : numbers) {
             if (numbers[i] % 2 != 0) {
                 a++;
             }
@@ -63,7 +63,7 @@ public class DivisibilityExclusion {
 
         numbersOdd = new int[a];
         int k = 0;
-        for(int i=0; i<numbers.length; i++){
+        for(int i : numbers){
             if(numbers[i]%2 != 0){
                 numbersOdd[k] = numbers[i];
                 k++;
@@ -74,7 +74,8 @@ public class DivisibilityExclusion {
 
     public int[] removeEvenOrOdd(boolean odd) {
         // TODO: Remove all odd or even numbers (based on the second argument) from the array with for-each loop
-        throw new UnsupportedOperationException();
+
+
     }
 
     public int[] removeDivisibleByThree() {
