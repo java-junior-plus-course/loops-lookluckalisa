@@ -12,20 +12,41 @@ public class DivisibilityExclusion {
     }
 
     public DivisibilityExclusion(int[] numbers) {
+
         this.numbers = numbers;
     }
 
     public int[] getNumbers() {
+
         return numbers;
     }
 
     public void setNumbers(int[] numbers) {
+
         this.numbers = numbers;
     }
 
+    private int[] numbersCopy;
+
     public int[] removeOdd() {
         // TODO: Remove all odd numbers from the array with for loop
-        throw new UnsupportedOperationException();
+        int a = 0;
+
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 == 0) {
+                a++;
+            }
+        }
+
+        numbersCopy = new int[a];
+        int k = 0;
+        for(int i=0; i<numbers.length; i++){
+            if(numbers[i]%2==0){
+                numbersCopy[k] = numbers[i];
+                k++;
+            }
+        }
+        return numbersCopy;
     }
 
     public int[] removeEven() {
