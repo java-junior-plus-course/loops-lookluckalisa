@@ -26,7 +26,7 @@ public class DivisibilityExclusion {
         this.numbers = numbers;
     }
 
-    private int[] numbersCopy;
+    private int[] numbersEven;
 
     public int[] removeOdd() {
         // TODO: Remove all odd numbers from the array with for loop
@@ -38,20 +38,38 @@ public class DivisibilityExclusion {
             }
         }
 
-        numbersCopy = new int[a];
+        numbersEven = new int[a];
         int k = 0;
         for(int i=0; i<numbers.length; i++){
-            if(numbers[i]%2==0){
-                numbersCopy[k] = numbers[i];
+            if(numbers[i]%2 == 0){
+                numbersEven[k] = numbers[i];
                 k++;
             }
         }
-        return numbersCopy;
+        return numbersEven;
     }
+
+    private int[] numbersOdd;
 
     public int[] removeEven() {
         // TODO: Remove all even numbers from the array with for-each loop
-        throw new UnsupportedOperationException();
+        int a = 0;
+
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 != 0) {
+                a++;
+            }
+        }
+
+        numbersOdd = new int[a];
+        int k = 0;
+        for(int i=0; i<numbers.length; i++){
+            if(numbers[i]%2 != 0){
+                numbersOdd[k] = numbers[i];
+                k++;
+            }
+        }
+        return numbersOdd;
     }
 
     public int[] removeEvenOrOdd(boolean odd) {
